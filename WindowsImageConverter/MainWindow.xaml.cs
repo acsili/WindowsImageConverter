@@ -21,5 +21,19 @@ namespace WindowsImageConverter
         {
             InitializeComponent();
         }
+
+        private void ButtonGetImagePath_Click(object sender, RoutedEventArgs e)
+        {
+            var pathGetter = new PathChooser();
+            var myImageConverter = new MyImageConverter();
+            myImageConverter.ConvertFromPngToJpg(pathGetter.GetImagePath(), pathGetter.SetImagePath());
+        }
+
+        private void ButtonSetNewImagePath_Click(object sender, RoutedEventArgs e)
+        {
+            /*var pathGetter = new PathChooser();
+            var myImageConverter = new MyImageConverter();
+            myImageConverter.ConvertFromPngToJpg(pathGetter.SetImagePath());*/
+        }
     }
 }
