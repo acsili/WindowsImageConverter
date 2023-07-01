@@ -17,23 +17,42 @@ namespace WindowsImageConverter
 { 
     public partial class MainWindow : Window
     {
+        MyImageConverter converter = new MyImageConverter();
         public MainWindow()
         {
             InitializeComponent();
+            FiletypeSetter.SetFiletypesInComboBox(ComboBoxFrom);
+            FiletypeSetter.SetFiletypesInComboBox(ComboBoxTo);
         }
 
         private void ButtonGetImagePath_Click(object sender, RoutedEventArgs e)
         {
             var pathGetter = new PathChooser();
-            var myImageConverter = new MyImageConverter();
-            myImageConverter.ConvertFromPngToJpg(pathGetter.GetImagePath(), pathGetter.SetImagePath());
+            converter.PathFrom = pathGetter.GetImagePath();
+            LabelPathFrom.Content = converter.PathFrom;
         }
 
         private void ButtonSetNewImagePath_Click(object sender, RoutedEventArgs e)
         {
-            /*var pathGetter = new PathChooser();
-            var myImageConverter = new MyImageConverter();
-            myImageConverter.ConvertFromPngToJpg(pathGetter.SetImagePath());*/
+            var pathGetter = new PathChooser();
+            converter.PathTo = pathGetter.SetImagePath();
+            LabelPathTo.Content = converter.PathTo;
+        }
+
+        private void ComboBoxFrom_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            FiletypeSetter.ChooseFiletypeInComboBox(ComboBoxFrom, converter);
+        }
+
+        private void ComboBoxTo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ButtonConvert_Click(object sender, RoutedEventArgs e)
+        {
+            converter.ConvertFromPngToJpg(converter.PathFrom, converter.PathTo);
+            MessageBox.Show("done");
         }
     }
 }

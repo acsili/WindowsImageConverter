@@ -9,15 +9,17 @@
 
     <Grid>
 
-        <ComboBox Name="ComboBoxFrom" HorizontalAlignment="Left" Margin="143,196,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox Name="ComboBoxTo" HorizontalAlignment="Left" Margin="337,196,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Convert from" HorizontalAlignment="Left" Margin="23,190,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label Content="to" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="18" Margin="0,190,0,0"/>
-        <Label Content="Choose image" HorizontalAlignment="Left" Margin="23,57,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label Content="Choose where to save the new image" HorizontalAlignment="Left" Margin="23,122,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Button Name="ButtonGetImagePath" Content="Choose" HorizontalAlignment="Left" Margin="159,57,0,0" VerticalAlignment="Top" Height="34" Width="65" FontSize="16" Click="ButtonGetImagePath_Click"/>
-        <Button Name="ButtonSetNewImagePath" Content="Choose" HorizontalAlignment="Left" Margin="337,122,0,0" VerticalAlignment="Top" Height="34" Width="65" FontSize="16" Click="ButtonSetNewImagePath_Click"/>
-        <Label Name="label1" Content="Label" HorizontalAlignment="Left" Margin="23,287,0,0" VerticalAlignment="Top"/>
+        <ComboBox Name="ComboBoxFrom" HorizontalAlignment="Left" Margin="143,220,0,0" VerticalAlignment="Top" Width="120" SelectionChanged= "ComboBoxFrom_SelectionChanged"/>
+        <ComboBox Name="ComboBoxTo" HorizontalAlignment="Left" Margin="337,220,0,0" VerticalAlignment="Top" Width="120" SelectionChanged= "ComboBoxTo_SelectionChanged"/>
+        <Label Content="Convert from" HorizontalAlignment="Left" Margin="23,214,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="to" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="18" Margin="0,214,0,0"/>
+        <Label Content="Choose image" HorizontalAlignment="Left" Margin="23,29,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Choose where to save the new image" HorizontalAlignment="Left" Margin="23,120,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Button Name="ButtonGetImagePath" Content="Choose" HorizontalAlignment="Left" Margin="159,29,0,0" VerticalAlignment="Top" Height="34" Width="65" FontSize="16" Click="ButtonGetImagePath_Click"/>
+        <Button Name="ButtonSetNewImagePath" Content="Choose" HorizontalAlignment="Left" Margin="337,120,0,0" VerticalAlignment="Top" Height="34" Width="65" FontSize="16" Click="ButtonSetNewImagePath_Click"/>
+        <Label Name="LabelPathFrom" Content="Label" HorizontalAlignment="Left" Margin="23,68,0,0" VerticalAlignment="Top" Width="312" FontSize="16"/>
+        <Label Name="LabelPathTo" Content="Label" HorizontalAlignment="Left" Margin="23,158,0,0" VerticalAlignment="Top" Width="312" FontSize="16"/>
+        <Button Name="ButtonConvert" Content="Convert" HorizontalAlignment="Center" Margin="0,281,0,0" VerticalAlignment="Top" Height="40" Width="172" FontSize="20" Click="ButtonConvert_Click"/>
 
 
     </Grid>
