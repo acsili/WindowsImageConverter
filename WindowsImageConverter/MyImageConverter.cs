@@ -13,6 +13,7 @@ namespace WindowsImageConverter
         public string? PathFrom { get; set; }
         public string? PathTo { get; set; }
         public ImageFormat? Format { get; set; }
+        public int ImageQuality { get; set; }
         private string GenerateFileName()
         {
             string letters = "qwertyuioplkjhgfdsazxcvbnm";
@@ -36,13 +37,13 @@ namespace WindowsImageConverter
         public void ConvertFromPngToJpg(string pathFrom, string pathTo)
         {
             Bitmap bitmap = new Bitmap(pathFrom);
-            ImageCodecInfo jpgEncoder = GetEncoder(Format);
+            ImageCodecInfo jpgEncoder = GetEncoder(ImageFormat.Png);
 
             System.Drawing.Imaging.Encoder encoder = System.Drawing.Imaging.Encoder.Quality;
 
             EncoderParameters encoderParameters = new EncoderParameters(1);
 
-            EncoderParameter myEncoderParameter = new EncoderParameter(encoder, 200);
+            EncoderParameter myEncoderParameter = new EncoderParameter(encoder, 1L);
             encoderParameters.Param[0] = myEncoderParameter;
             string newFileName = pathTo + "\\" + GenerateFileName();
             bitmap.Save(newFileName, jpgEncoder, encoderParameters);
@@ -52,7 +53,7 @@ namespace WindowsImageConverter
         private ImageCodecInfo GetEncoder(ImageFormat format)
         {
             ImageCodecInfo[] codecs = ImageCodecInfo.GetImageDecoders();
-
+    
             foreach (ImageCodecInfo codec in codecs)
             {
                 if (codec.FormatID == format.Guid)

@@ -54,5 +54,13 @@ namespace WindowsImageConverter
             converter.ConvertFromPngToJpg(converter.PathFrom, converter.PathTo);
             MessageBox.Show("done");
         }
+
+        private void SliderQuality_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            int value = Convert.ToInt32(e.NewValue);
+            string msg = String.Format("Value: {0}", value);
+            TextBlockQuality.Text = msg;
+            converter.ImageQuality = value;
+        }
     }
 }

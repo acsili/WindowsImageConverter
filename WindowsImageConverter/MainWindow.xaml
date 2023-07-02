@@ -5,21 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WindowsImageConverter"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="600" >
+        Title="MainWindow" Height="424" Width="600" >
 
     <Grid>
 
-        <ComboBox Name="ComboBoxFrom" HorizontalAlignment="Left" Margin="143,220,0,0" VerticalAlignment="Top" Width="120" SelectionChanged= "ComboBoxFrom_SelectionChanged"/>
-        <ComboBox Name="ComboBoxTo" HorizontalAlignment="Left" Margin="337,220,0,0" VerticalAlignment="Top" Width="120" SelectionChanged= "ComboBoxTo_SelectionChanged"/>
-        <Label Content="Convert from" HorizontalAlignment="Left" Margin="23,214,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label Content="to" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="18" Margin="0,214,0,0"/>
-        <Label Content="Choose image" HorizontalAlignment="Left" Margin="23,29,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label Content="Choose where to save the new image" HorizontalAlignment="Left" Margin="23,120,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <ComboBox Name="ComboBoxFrom" HorizontalAlignment="Left" Margin="143,262,0,0" VerticalAlignment="Top" Width="120" SelectionChanged= "ComboBoxFrom_SelectionChanged"/>
+        <ComboBox Name="ComboBoxTo" HorizontalAlignment="Left" Margin="413,262,0,0" VerticalAlignment="Top" Width="120" SelectionChanged= "ComboBoxTo_SelectionChanged"/>
+        <Label Content="Convert from" HorizontalAlignment="Left" Margin="23,256,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Width="115"/>
+        <Label Content="to" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Margin="318,256,0,0" Height="34" Width="28"/>
+        <Label Content="Choose image" HorizontalAlignment="Left" Margin="23,29,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Width="123"/>
+        <Label Content="Choose where to save the new image" HorizontalAlignment="Left" Margin="23,120,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Width="306"/>
         <Button Name="ButtonGetImagePath" Content="Choose" HorizontalAlignment="Left" Margin="159,29,0,0" VerticalAlignment="Top" Height="34" Width="65" FontSize="16" Click="ButtonGetImagePath_Click"/>
-        <Button Name="ButtonSetNewImagePath" Content="Choose" HorizontalAlignment="Left" Margin="337,120,0,0" VerticalAlignment="Top" Height="34" Width="65" FontSize="16" Click="ButtonSetNewImagePath_Click"/>
+        <Button Name="ButtonSetNewImagePath" Content="Choose" HorizontalAlignment="Left" Margin="345,121,0,0" VerticalAlignment="Top" Height="34" Width="65" FontSize="16" Click="ButtonSetNewImagePath_Click"/>
         <Label Name="LabelPathFrom" Content="Label" HorizontalAlignment="Left" Margin="23,68,0,0" VerticalAlignment="Top" Width="312" FontSize="16"/>
         <Label Name="LabelPathTo" Content="Label" HorizontalAlignment="Left" Margin="23,158,0,0" VerticalAlignment="Top" Width="312" FontSize="16"/>
-        <Button Name="ButtonConvert" Content="Convert" HorizontalAlignment="Center" Margin="0,281,0,0" VerticalAlignment="Top" Height="40" Width="172" FontSize="20" Click="ButtonConvert_Click"/>
+        <Button Name="ButtonConvert" Content="Convert" HorizontalAlignment="Center" Margin="0,320,0,0" VerticalAlignment="Top" Height="40" Width="172" FontSize="20" Click="ButtonConvert_Click"/>
+        <Label Name="LabelQuality" Content="Image quality" HorizontalAlignment="Left" Margin="23,202,0,0" VerticalAlignment="Top" Width="123" FontSize="18" Height="34"/>
+        <Slider Name="SliderQuality" ValueChanged="SliderQuality_ValueChanged"  HorizontalAlignment="Left" Margin="159,213,0,0" Maximum="100" TickPlacement="BottomRight" TickFrequency="10" IsSnapToTickEnabled="True" VerticalAlignment="Top" Width="319" Height="24"/>
+        <TextBlock Name="TextBlockQuality"  HorizontalAlignment="Left" Margin="496,207,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="18"/>
 
 
     </Grid>
