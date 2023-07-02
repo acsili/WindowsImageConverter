@@ -21,8 +21,8 @@ namespace WindowsImageConverter
         public MainWindow()
         {
             InitializeComponent();
-            FiletypeSetter.SetFiletypesInComboBox(ComboBoxFrom);
             FiletypeSetter.SetFiletypesInComboBox(ComboBoxTo);
+            converter.ImageQuality = 0;
         }
 
         private void ButtonGetImagePath_Click(object sender, RoutedEventArgs e)
@@ -38,15 +38,9 @@ namespace WindowsImageConverter
             converter.PathTo = pathGetter.SetImagePath();
             LabelPathTo.Content = converter.PathTo;
         }
-
-        private void ComboBoxFrom_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            FiletypeSetter.ChooseFiletypeInComboBox(ComboBoxFrom, converter);
-        }
-
         private void ComboBoxTo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            FiletypeSetter.ChooseFiletypeInComboBox(ComboBoxTo, converter);
         }
 
         private void ButtonConvert_Click(object sender, RoutedEventArgs e)
@@ -58,7 +52,7 @@ namespace WindowsImageConverter
         private void SliderQuality_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             int value = Convert.ToInt32(e.NewValue);
-            string msg = String.Format("Value: {0}", value);
+            string msg = string.Format("Value: {0}", value);
             TextBlockQuality.Text = msg;
             converter.ImageQuality = value;
         }

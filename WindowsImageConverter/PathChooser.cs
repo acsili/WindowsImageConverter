@@ -19,7 +19,7 @@ namespace WindowsImageConverter
             OpenFileDialog openFileDialog = new OpenFileDialog()
             {
                 Multiselect = true,
-                Filter = "Image files (*.png;*.jpg)|*.png;*.jpg",
+                Filter = "Image files (*.png;*.jpg;*.gif;*.tiff;*.bmp)|*.png;*.jpg;*.gif;*.tiff;*.bmp",
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
             };
 
