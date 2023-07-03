@@ -14,7 +14,6 @@ namespace WindowsImageConverter
         public string? PathTo { get; set; }
         public ImageFormat? Format { get; set; }
         public string? StringFormat { get; set; }
-        public int ImageQuality { get; set; }
         private string GenerateFileName()
         {
             string letters = "qwertyuioplkjhgfdsazxcvbnm";
@@ -44,7 +43,7 @@ namespace WindowsImageConverter
 
             EncoderParameters encoderParameters = new EncoderParameters(1);
 
-            EncoderParameter myEncoderParameter = new EncoderParameter(encoder, ImageQuality);
+            EncoderParameter myEncoderParameter = new EncoderParameter(encoder, 100L);
             encoderParameters.Param[0] = myEncoderParameter;
             string newFileName = pathTo + "\\" + GenerateFileName();
             bitmap.Save(newFileName, imageEncoder, encoderParameters);

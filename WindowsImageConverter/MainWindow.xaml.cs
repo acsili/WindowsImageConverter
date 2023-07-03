@@ -22,7 +22,6 @@ namespace WindowsImageConverter
         {
             InitializeComponent();
             FiletypeSetter.SetFiletypesInComboBox(ComboBoxTo);
-            converter.ImageQuality = 0;
         }
 
         private void ButtonGetImagePath_Click(object sender, RoutedEventArgs e)
@@ -45,16 +44,16 @@ namespace WindowsImageConverter
 
         private void ButtonConvert_Click(object sender, RoutedEventArgs e)
         {
-            converter.ConvertFromPngToJpg(converter.PathFrom, converter.PathTo);
-            MessageBox.Show("done");
+            try
+            {
+                converter.ConvertFromPngToJpg(converter.PathFrom, converter.PathTo);
+                MessageBox.Show("Done.");
+            }
+            catch
+            {
+                MessageBox.Show("Error! Try again.");
+            }
         }
 
-        private void SliderQuality_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            int value = Convert.ToInt32(e.NewValue);
-            string msg = string.Format("Value: {0}", value);
-            TextBlockQuality.Text = msg;
-            converter.ImageQuality = value;
-        }
     }
 }

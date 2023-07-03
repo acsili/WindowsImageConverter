@@ -5,21 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WindowsImageConverter"
         mc:Ignorable="d"
-        Title="MainWindow" Height="424" Width="600" >
+        Title="Windows image converter" Height="400" Width="600" ResizeMode="NoResize">
 
-    <Grid>
-        <ComboBox Name="ComboBoxTo" HorizontalAlignment="Left" Margin="176,262,0,0" VerticalAlignment="Top" Width="120" SelectionChanged= "ComboBoxTo_SelectionChanged"/>
-        <Label Content="Convert to" HorizontalAlignment="Left" Margin="23,256,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Width="115"/>
-        <Label Content="Choose image" HorizontalAlignment="Left" Margin="23,29,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Width="123"/>
-        <Label Content="Choose where to save the new image" HorizontalAlignment="Left" Margin="23,120,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Width="306"/>
-        <Button Name="ButtonGetImagePath" Content="Choose" HorizontalAlignment="Left" Margin="159,29,0,0" VerticalAlignment="Top" Height="34" Width="65" FontSize="16" Click="ButtonGetImagePath_Click"/>
-        <Button Name="ButtonSetNewImagePath" Content="Choose" HorizontalAlignment="Left" Margin="345,121,0,0" VerticalAlignment="Top" Height="34" Width="65" FontSize="16" Click="ButtonSetNewImagePath_Click"/>
-        <Label Name="LabelPathFrom" Content="" HorizontalAlignment="Left" Margin="23,68,0,0" VerticalAlignment="Top" Width="312" FontSize="16"/>
-        <Label Name="LabelPathTo" Content="" HorizontalAlignment="Left" Margin="23,158,0,0" VerticalAlignment="Top" Width="312" FontSize="16"/>
-        <Button Name="ButtonConvert" Content="Convert" HorizontalAlignment="Center" Margin="0,320,0,0" VerticalAlignment="Top" Height="40" Width="172" FontSize="20" Click="ButtonConvert_Click"/>
-        <Label Name="LabelQuality" Content="Image quality" HorizontalAlignment="Left" Margin="23,202,0,0" VerticalAlignment="Top" Width="123" FontSize="18" Height="34"/>
-        <Slider Name="SliderQuality" ValueChanged="SliderQuality_ValueChanged"  HorizontalAlignment="Left" Margin="159,213,0,0" Maximum="100" TickPlacement="BottomRight" TickFrequency="10" IsSnapToTickEnabled="True" VerticalAlignment="Top" Width="319" Height="24"/>
-        <TextBlock Name="TextBlockQuality"  HorizontalAlignment="Left" Margin="496,207,0,0" TextWrapping="Wrap" Text="Value: 0" VerticalAlignment="Top" FontSize="18"/>
+    <Grid Margin="0,0,0,0" Background="WhiteSmoke">
+        
+        <ComboBox Name="ComboBoxTo" HorizontalAlignment="Left" Margin="140,229,0,0" VerticalAlignment="Top" Width="120" SelectionChanged= "ComboBoxTo_SelectionChanged" FontFamily="Adobe Gothic Std B"/>
+        <Label Content="Convert to" HorizontalAlignment="Left" Margin="23,221,0,0" VerticalAlignment="Top" FontSize="18" Height="38" Width="115" FontFamily="Adobe Gothic Std B"/>
+        <Label Content="Choose image" HorizontalAlignment="Left" Margin="23,22,0,0" VerticalAlignment="Top" FontSize="18" Height="46" Width="131" FontFamily="Adobe Gothic Std B"/>
+        <Label Content="Choose where to save the new image" HorizontalAlignment="Left" Margin="23,115,0,0" VerticalAlignment="Top" FontSize="18" Height="43" Width="325" FontFamily="Adobe Gothic Std B"/>
+        <Button Name="ButtonGetImagePath" Content="Choose" Margin="159,29,0,0" Height="34" 
+                Width="65" FontSize="16" Click="ButtonGetImagePath_Click" FontFamily="Adobe Gothic Std B" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFDDDDDD">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="8"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Name="ButtonSetNewImagePath" Content="Choose" HorizontalAlignment="Left" Margin="353,121,0,0" VerticalAlignment="Top" 
+                Height="34" Width="65" FontSize="16" Click="ButtonSetNewImagePath_Click" FontFamily="Adobe Gothic Std B" Background="#FFDDDDDD">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="8"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Label Name="LabelPathFrom" Content="" HorizontalAlignment="Left" Margin="23,68,0,0" VerticalAlignment="Top" Width="312" FontSize="16" FontFamily="Adobe Gothic Std B"/>
+        <Label Name="LabelPathTo" Content="" HorizontalAlignment="Left" Margin="23,158,0,0" VerticalAlignment="Top" Width="312" FontSize="16" FontFamily="Adobe Gothic Std B"/>
+        <Button Name="ButtonConvert" Content="Convert" HorizontalAlignment="Center" Margin="0,285,0,0" VerticalAlignment="Top" 
+                Height="40" Width="172" FontSize="20" Click="ButtonConvert_Click" FontFamily="Adobe Gothic Std B" Background="#FFDDDDDD">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="8"/>
+                </Style>
+            </Button.Resources>
+        </Button>
 
 
     </Grid>
