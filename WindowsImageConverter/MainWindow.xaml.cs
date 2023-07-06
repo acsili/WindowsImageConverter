@@ -46,12 +46,13 @@ namespace WindowsImageConverter
         {
             try
             {
+                //MessageBox.Show("Wait...");
                 converter.ConvertFromPngToJpg(converter.PathFrom, converter.PathTo);
                 MessageBox.Show("Done.");
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Error! Try again.");
+                MessageBox.Show("Error! Try again. \n" + ex);
             }
         }
 
